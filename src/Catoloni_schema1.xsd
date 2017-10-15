@@ -1,0 +1,36 @@
+<xs:schema xmlns="http://java2wsdl.catoloni.cap.repo.archi.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://java2wsdl.catoloni.cap.repo.archi.com/">
+  <xs:complexType name="catoloni">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="aspets" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="date" type="xs:string"/>
+      <xs:element minOccurs="0" name="email" type="xs:string"/>
+      <xs:element minOccurs="0" name="id" type="xs:long"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="ref" type="xs:string"/>
+      <xs:element name="status" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="type" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="getList" type="getList"/>
+  <xs:complexType name="getList">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:element name="getListResponse" type="getListResponse"/>
+  <xs:complexType name="getListResponse">
+    <xs:sequence>
+      <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="return" type="catoloni"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="getById" type="getById"/>
+  <xs:complexType name="getById">
+    <xs:sequence>
+      <xs:element form="qualified" minOccurs="0" name="id" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="getByIdResponse" type="getByIdResponse"/>
+  <xs:complexType name="getByIdResponse">
+    <xs:sequence>
+      <xs:element form="qualified" minOccurs="0" name="return" type="catoloni"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
